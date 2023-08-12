@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    tools:ignore="ExtraText">
+    android:padding="10dp"
+    android:shape="rectangle">
+<!--    para hacer el fondo transparente colocamos 8 ceros-->
+    <solid android:color="#00000000" />
+</shape>
