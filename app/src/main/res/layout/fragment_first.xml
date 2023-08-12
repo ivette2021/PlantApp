@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/OnSurface"
     tools:context="com.example.plantapp.View.FirstFragment">
 
 
@@ -11,47 +12,23 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:scrollbars="none">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="100dp"
+            android:layout_marginTop="135dp"
             android:orientation="vertical">
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/Rv"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
+                android:layout_height="match_parent"
                 android:orientation="horizontal"
                 tools:itemCount="1"
-                tools:listitem="@layout/plants_list" />
+                tools:listitem="@layout/mygarden_list" />
 
         </LinearLayout>
     </ScrollView>
 
-    <!--    se genera profundidad-->
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:cardCornerRadius="10dp"
-        app:cardElevation="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <!--    creamos encabezado-->
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="match_parent"
-            android:layout_height="90dp"
-            android:fontFamily="@font/nunito_sans_black"
-            android:gravity="center"
-            android:padding="10dp"
-            android:text="@string/titulo1"
-            android:textColor="@color/Primary"
-            android:textSize="20sp" />
-
-    </androidx.cardview.widget.CardView>
 
 </RelativeLayout>

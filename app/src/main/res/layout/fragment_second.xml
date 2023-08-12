@@ -6,51 +6,33 @@
     android:layout_height="match_parent"
     tools:context="com.example.plantapp.View.SecondFragment">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="313dp"
-        android:layout_height="314dp"
-        android:layout_marginStart="52dp"
-        android:layout_marginTop="116dp"
-        android:contentDescription="imagen de planta"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:src="@tools:sample/avatars" />
 
-    <TextView
-        android:id="@+id/tv_nombre_articulo"
-        android:layout_width="355dp"
-        android:layout_height="65dp"
-        android:layout_marginStart="52dp"
-        android:layout_marginTop="24dp"
-        android:fontFamily="@font/nunito_sans_black"
-        android:text="@string/nombre_articulo"
-        android:textSize="20sp"
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <ImageButton
-        android:id="@+id/btn_atras"
-        android:layout_width="57dp"
-        android:layout_height="53dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="24dp"
-        android:background="@android:color/transparent"
-        android:contentDescription="atras"
-        android:src="@drawable/ic_back"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"
+            android:orientation="vertical">
 
+<!--se desplazamiento horizontal-->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/Rv_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:orientation="vertical"
+                tools:itemCount="1"
+                tools:listitem="@layout/plants_list" />
 
-    <TextView
-        android:id="@+id/tv_descripcion"
-        android:layout_width="173dp"
-        android:layout_height="25dp"
-        android:layout_marginStart="52dp"
-        android:layout_marginTop="7dp"
-        android:text="TextView"
-        android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_nombre_articulo" />
+        </LinearLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

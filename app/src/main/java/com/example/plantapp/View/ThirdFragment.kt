@@ -1,61 +1,73 @@
 package com.example.plantapp.View
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.Observer
 import com.bumptech.glide.Glide
 import com.example.marsapp.databinding.FragmentThirdBinding
+import com.example.plantapp.PlantAdapter
+import com.example.plantapp.ViewModel.PlantViewModel
+
 
 
 class ThirdFragment : Fragment() {
-    private var binding: FragmentThirdBinding? = null
-    private val mViewModel : PlantViewModel by activityViewModels()
-    private var courseId : String? = null
+    private lateinit var mBinding: FragmentThirdBinding
 
+    // referencia para el adapter
+    private val mViewModel : PlantViewModel by activityViewModels()
+    private var plantId : String? = null
 
     override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
+        inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentThirdBinding.inflate(inflater, container, false)
-        return binding?.root
+
+        mBinding = FragmentThirdBinding.inflate(inflater, container, false)
+        return mBinding.root
+
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding?.btnAtras?.setOnClickListener {
+        mBinding?.btnAtras?.setOnClickListener {
             parentFragmentManager.popBackStack()
         }
 
-        val bundle = arguments
-        if (bundle != null) {
-            val url = bundle.getString("url")
-            val datos = bundle.getString("datos")
-            val precio = bundle.getString("precio")
-            val pDescription = bundle.getString("pDescription")
-            // Cargar la imagen usando Glide o Picasso, se uso into para pasar directamente las ref. a imageview como parametro
-            binding?.ivPlantaSeleccionada?.let {
-                Glide.with(requireContext())
-                    .load(url)
-                    .into(it)
-            }
-
-            // Mostrar los datos adicionales
-            binding?.tvNombreArticulo?.text = datos
-            binding?.tvPrecioBig?.text = precio
-            binding?.tvDescripcion?.text = pDescription
+        arguments?.let { bundle ->
+            
+            plantId = bundle.getString("plantId")
+            Log.d("seleccion", plantId.toString())
         }
+
+        plantId?.let { id ->
+            mViewModel.getPlantDetailByIdFromInternet(id)
+
+        }
+
+        mViewModel.getPlantDetail().observe(viewLifecycleOwner, Observer {
+            Log.d("seleccion3", plantId.toString())
+
+
+// cargamos los datos desde la seleccion
+            Glide.with(mBinding.ivPlantaSeleccionada).load(it.imagen).into(mBinding.ivPlantaSeleccionada)
+            mBinding.tvNombrePlanta.text = it.nombre
+            mBinding.tvRequerimientoAgua.text= it.tipo
+            mBinding.tvDescripcion.text= it.descripcion
+
+        })
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
-        binding = null
-    }
-}
 
+    }
 }

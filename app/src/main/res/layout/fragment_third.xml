@@ -1,64 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/Secondary"
     tools:context="com.example.plantapp.View.ThirdFragment">
 
     <ImageView
         android:id="@+id/iv_planta_seleccionada"
         android:layout_width="match_parent"
         android:layout_height="306dp"
+        android:layout_marginTop="100dp"
         android:contentDescription="imagen de planta"
+        android:elevation="20dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:src="@tools:sample/avatars" />
 
     <TextView
-        android:id="@+id/tv_nombre_articulo"
-        android:layout_width="355dp"
-        android:layout_height="65dp"
-        android:layout_marginStart="52dp"
-        android:layout_marginTop="24dp"
-        android:fontFamily="@font/nunito_sans_black"
+        android:id="@+id/tv_nombre_planta"
+        android:layout_width="338dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="15dp"
+        android:fontFamily="@font/nunito_sans_extrabold"
         android:text="@string/nombre_articulo"
-        android:textSize="20sp"
+        android:textColor="@color/Error"
+        android:textSize="40sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/iv_planta_seleccionada" />
+
 
     <ImageButton
         android:id="@+id/btn_atras"
         android:layout_width="57dp"
         android:layout_height="53dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginBottom="16dp"
         android:background="@android:color/transparent"
         android:contentDescription="atras"
         android:src="@drawable/ic_back"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
+
         android:id="@+id/tv_requerimiento_agua"
         android:layout_width="173dp"
         android:layout_height="25dp"
-        android:layout_marginStart="52dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/nunito"
         android:text="TextView"
-        android:textSize="16sp"
+        android:textColor="@color/Error"
+        android:textSize="22sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_descripcion" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_nombre_planta" />
 
     <TextView
         android:id="@+id/tv_descripcion"
-        android:layout_width="173dp"
-        android:layout_height="25dp"
-        android:layout_marginStart="52dp"
-        android:layout_marginTop="32dp"
+        android:layout_width="316dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="40dp"
+        android:fontFamily="@font/nunito"
         android:text="TextView"
-        android:textSize="16sp"
+        android:textAlignment="viewStart"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_nombre_articulo" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_requerimiento_agua" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

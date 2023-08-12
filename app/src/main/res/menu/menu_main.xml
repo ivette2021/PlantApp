@@ -3,28 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.example.plantapp.View.MainActivity">
     <item
-        android:id="@+id/action_settings"
-        android:orderInCategory="100"
-        android:title="@string/action_settings"
-        app:showAsAction="never" />
-    <item
-        android:id="@+id/home"
-        android:icon="@drawable/ic_store"
-        android:title="Home" />
-    <item
-        android:id="@+id/favoritos"
-        android:icon="@drawable/ic_love"
-        android:title="Favoritos" />
-    <item
-        android:id="@+id/placeholder"
-        android:title="" />
-    <item
-        android:id="@+id/pago"
-        android:icon="@drawable/ic_payment"
-        android:title="pago" />
-    <item
-        android:id="@+id/perfil"
-        android:icon="@drawable/ic_user"
-        android:title="Perfil"/>
+        android:id="@+id/MyGarden"
+        android:icon="@drawable/ic_plant"
+        android:title="My Garden" />
 
+    <item
+        android:id="@+id/Plant_list"
+        android:icon="@drawable/ic_plant_cloud"
+        android:title="Plant List" />
 </menu>

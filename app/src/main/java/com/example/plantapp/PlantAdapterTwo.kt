@@ -8,10 +8,10 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.marsapp.databinding.MygardenListBinding
+import com.example.marsapp.databinding.PlantsListBinding
 import com.example.plantapp.Model.Local.Entities.PlantEntity
 
-class PlantAdapter :RecyclerView.Adapter<PlantAdapter.PlantVH>(){
+class PlantAdapterTwo :RecyclerView.Adapter<PlantAdapterTwo.PlantVH>(){
     // referencia para el adapter
     private var listBinding= listOf<PlantEntity>()
     private  val selectedPlant= MutableLiveData<PlantEntity>()
@@ -24,15 +24,13 @@ class PlantAdapter :RecyclerView.Adapter<PlantAdapter.PlantVH>(){
     // función para seleccionar
     fun selectedPlant(): LiveData<PlantEntity> = selectedPlant
 
-    inner class PlantVH(private  val mbinding : MygardenListBinding):
+    inner class PlantVH(private  val mbinding : PlantsListBinding):
         RecyclerView.ViewHolder(mbinding.root), View.OnClickListener{
 
         fun bind(plant: PlantEntity){ //los id de los xml con guion bajo se escriben aqui como camelcase
 
-            Glide.with(mbinding.ivItem).load(plant.imagen).centerCrop().into(mbinding.ivItem)
-            mbinding.tvNombrePlanta.text= plant.nombre
-            //mbinding.tvPlantado.text= plant.tipo
-            //mbinding.tvUltimoRiego.text= plant.descripcion
+            Glide.with(mbinding.ivItem2).load(plant.imagen).centerCrop().into(mbinding.ivItem2)
+            mbinding.tvNombrePlanta2.text= plant.nombre
             itemView.setOnClickListener(this)
 
         }
@@ -44,16 +42,13 @@ class PlantAdapter :RecyclerView.Adapter<PlantAdapter.PlantVH>(){
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PlantVH {
-        return PlantVH(MygardenListBinding.inflate(LayoutInflater.from(parent.context)))
+        return PlantVH(PlantsListBinding.inflate(LayoutInflater.from(parent.context)))
     }
-
     override fun getItemCount() = listBinding.size
 
-
-    override fun onBindViewHolder(holder: PlantVH, position: Int) {
+    override fun onBindViewHolder(holder: PlantAdapterTwo.PlantVH, position: Int) {
         val plant= listBinding[position]
         holder.bind(plant)
     }
-
 
 }
