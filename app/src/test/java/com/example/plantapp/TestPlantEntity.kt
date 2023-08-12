@@ -28,26 +28,28 @@ class TestPlantEntity {
             )
 
 
-        @After
-        fun tearDown() {
-
-            // acciones de limpieza y liberación de recursos
-        }
 
 
-        @Test
-
-        fun testPlantConstructor() {
-            // verificar que los valores asignados en el constructor sean correctos
-
-            assert(plantEntity.id == "3")
-            assert(plantEntity.nombre == "Hola Mundo")
-            assert(plantEntity.tipo == "65748")
-            assert(plantEntity.imagen == "imagen")
-            assert(plantEntity.descripcion == "flor blah, blah, blah")
 
 
-        }
+    }
+    @After
+    fun tearDown() {
+
+        // acciones de limpieza y liberación de recursos
+    }
+
+    @Test
+
+    fun testPlantConstructor() {
+        // verificar que los valores asignados en el constructor sean correctos
+
+        assert(plantEntity.id == "3")
+        assert(plantEntity.nombre == "Hola Mundo")
+        assert(plantEntity.tipo == "65748")
+        assert(plantEntity.imagen == "imagen")
+        assert(plantEntity.descripcion == "flor blah, blah, blah")
+
 
     }
     }
