@@ -53,10 +53,10 @@ class SecondFragment : Fragment() {
         
         // MÉTODO PARA SELECCIONAR
 
-        adapter.selectedPlant().observe(viewLifecycleOwner, Observer {
+        adapter.selectedPlant2().observe(viewLifecycleOwner, Observer {
             it?.let {
                 // válidar si capta la seleccion
-                Log.d("Seleccion", it.id.toString())
+                Log.d("Seleccion 2", it.id.toString())
 
             }
             val bundle = Bundle().apply {

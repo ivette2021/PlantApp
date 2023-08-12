@@ -13,16 +13,16 @@ import com.example.plantapp.Model.Local.Entities.PlantEntity
 
 class PlantAdapterTwo :RecyclerView.Adapter<PlantAdapterTwo.PlantVH>(){
     // referencia para el adapter
-    private var listBinding= listOf<PlantEntity>()
-    private  val selectedPlant= MutableLiveData<PlantEntity>()
+    private var listBinding2= listOf<PlantEntity>()
+    private  val selectedPlant2= MutableLiveData<PlantEntity>()
 
     fun update (list:List<PlantEntity>){
-        listBinding= list
+        listBinding2= list
         notifyDataSetChanged()
     }
 
     // función para seleccionar
-    fun selectedPlant(): LiveData<PlantEntity> = selectedPlant
+    fun selectedPlant2(): LiveData<PlantEntity> = selectedPlant2
 
     inner class PlantVH(private  val mbinding : PlantsListBinding):
         RecyclerView.ViewHolder(mbinding.root), View.OnClickListener{
@@ -36,7 +36,7 @@ class PlantAdapterTwo :RecyclerView.Adapter<PlantAdapterTwo.PlantVH>(){
         }
         override fun onClick(v: View) {
             // referencia a la selección
-            selectedPlant.value= listBinding[adapterPosition]
+            selectedPlant2.value= listBinding2[adapterPosition]
             Log.d("ONCLICK",adapterPosition.toString())
         }
     }
@@ -44,10 +44,10 @@ class PlantAdapterTwo :RecyclerView.Adapter<PlantAdapterTwo.PlantVH>(){
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PlantVH {
         return PlantVH(PlantsListBinding.inflate(LayoutInflater.from(parent.context)))
     }
-    override fun getItemCount() = listBinding.size
+    override fun getItemCount() = listBinding2.size
 
     override fun onBindViewHolder(holder: PlantAdapterTwo.PlantVH, position: Int) {
-        val plant= listBinding[position]
+        val plant= listBinding2[position]
         holder.bind(plant)
     }
 
