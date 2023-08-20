@@ -7,8 +7,8 @@ import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import android.view.MenuItem
 import android.widget.Toast
-import com.example.marsapp.R
-import com.example.marsapp.databinding.ActivityMainBinding
+import com.example.plantApp.R
+import com.example.plantApp.databinding.ActivityMainBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 

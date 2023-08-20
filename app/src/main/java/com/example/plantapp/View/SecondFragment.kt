@@ -11,8 +11,8 @@ import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.marsapp.R
-import com.example.marsapp.databinding.FragmentSecondBinding
+import com.example.plantApp.R
+import com.example.plantApp.databinding.FragmentSecondBinding
 import com.example.plantapp.PlantAdapter
 import com.example.plantapp.PlantAdapterTwo
 import com.example.plantapp.ViewModel.PlantViewModel

@@ -5,11 +5,11 @@ plugins {
 }
 
 android {
-    namespace 'com.example.marsapp'
+    namespace 'com.example.plantApp'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.example.marsapp"
+        applicationId "com.example.plantApp"
         minSdk 33
         targetSdk 33
         versionCode 1

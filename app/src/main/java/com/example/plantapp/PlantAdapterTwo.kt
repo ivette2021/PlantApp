@@ -8,7 +8,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.marsapp.databinding.PlantsListBinding
+import com.example.plantApp.databinding.PlantsListBinding
 import com.example.plantapp.Model.Local.Entities.PlantEntity
 
 class PlantAdapterTwo :RecyclerView.Adapter<PlantAdapterTwo.PlantVH>(){

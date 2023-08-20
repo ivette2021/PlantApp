@@ -12,7 +12,7 @@ import android.widget.Toast
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import com.bumptech.glide.Glide
-import com.example.marsapp.databinding.FragmentThirdBinding
+import com.example.plantApp.databinding.FragmentThirdBinding
 import com.example.plantapp.PlantAdapter
 import com.example.plantapp.ViewModel.PlantViewModel
 
