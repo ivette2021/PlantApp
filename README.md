@@ -1,5 +1,4 @@
 
-
 <h1 style="background-color:#ADCAF9;">Plant App</h1>
 
 PlantApp se enfoca en proporcionar a los usuarios una experiencia educativa y atractiva en el mundo de las plantas.
@@ -11,3 +10,6 @@ Caracteristicas:
 - Integración de Retrofit para realizar solicitudes HTTP.
 - Visualización de imágenes a través de bibliotecas como Glide.
 
+<br>
+
+<img src="https://github.com/ivette2021/PlantApp/raw/master/presentacion%20de%20fragment.png" >
