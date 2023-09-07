@@ -57,7 +57,7 @@ class FirstFragment : Fragment() {
         adapter.selectedPlant().observe(viewLifecycleOwner, Observer {
             it?.let {
                 // válidar si capta la seleccion
-                Log.d("Seleccion", it.id.toString())
+                Log.d("Seleccion", it.id)
 
             }
             val bundle = Bundle().apply {

@@ -7,6 +7,7 @@ import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import android.view.MenuItem
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import com.example.plantApp.R
 import com.example.plantApp.databinding.ActivityMainBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -54,22 +55,27 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
             Log.d("MiTag", "Mensaje de depuración")
             when (item.itemId) {
                 R.id.MyGarden -> {
-                    val firstFragment = FirstFragment()
-                    supportFragmentManager.beginTransaction()
-                        .replace(R.id.nav_host_fragment_content_main, firstFragment)
-                        .addToBackStack(null)
-                        .commit()
+                    navigateToFragment(FirstFragment())
+                    Log.d("MiTag", "Moovida a primer fragmento")
                     return true
                 }
-                R.id.Plant_list-> {
-                    val secondFragment = SecondFragment()
-                    supportFragmentManager.beginTransaction()
-                        .replace(R.id.nav_host_fragment_content_main, secondFragment)
-                        .addToBackStack(null)
-                        .commit()
+                R.id.Plant_list -> {
+
+                    navigateToFragment(SecondFragment())
+                    Log.d("mitag2","movida de 1 a 2")
                     return true
                 }
             }
             return false
+        }
+
+        private fun navigateToFragment(fragment: Fragment) {
+             // Elimina el fragmento anterior del backstack
+
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.nav_host_fragment_content_main, fragment)
+                .addToBackStack(null)
+                .commit()
+
         }
     }

@@ -1,5 +1,6 @@
 package com.example.plantapp.Model.Local
 
+import android.view.View.OnClickListener
 import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Insert
@@ -10,7 +11,7 @@ import com.example.plantapp.Model.Local.Entities.PlantEntity
 
 
 @Dao
-interface PlantDao {
+ interface PlantDao {
 
     // insertar lista de plantas
     @Insert(onConflict = OnConflictStrategy.REPLACE)//si hay duplicado , que simplemente reemplace

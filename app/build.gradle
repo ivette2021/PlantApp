@@ -1,7 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
-    id 'kotlin-kapt'
+
 }
 
 android {
@@ -34,6 +34,10 @@ android {
     buildFeatures {
         viewBinding true
     }
+    dependenciesInfo {
+        includeInApk true
+        includeInBundle true
+    }
 }
 apply plugin: 'kotlin-kapt'
 
@@ -56,7 +60,7 @@ dependencies {
 
     //Glide leer una url convertirla en imagen
     implementation "com.github.bumptech.glide:glide:4.13.0"
-    annotationProcessor 'com.github.bumptech.glide:compiler:4.13.0'
+    kapt 'com.github.bumptech.glide:compiler:4.13.0'
 
     //ROOM , persistencia de datos
     implementation "androidx.room:room-runtime:2.5.2"
@@ -71,8 +75,6 @@ dependencies {
 
 
 
-    // Optional -- Robolectric environment
-    testImplementation 'androidx.test:core:1.5.0'
     // Optional -- Mockito framework
     testImplementation 'org.mockito:mockito-core:1.10.19'
 
@@ -84,4 +86,18 @@ dependencies {
     configurations.all {
         exclude module: 'okhttp-ws'
     }
+
+// For Robolectric tests.
+    testImplementation("com.google.dagger:hilt-android-testing:2.44")
+    // ...with Kotlin.
+    kaptTest("com.google.dagger:hilt-android-compiler:2.44")
+    // ...with Java.
+    testAnnotationProcessor("com.google.dagger:hilt-android-compiler:2.44")
+
+    // For instrumented tests.
+    androidTestImplementation("com.google.dagger:hilt-android-testing:2.44")
+    // ...with Kotlin.
+    kaptAndroidTest("com.google.dagger:hilt-android-compiler:2.44")
+    // ...with Java.
+    androidTestAnnotationProcessor("com.google.dagger:hilt-android-compiler:2.44")
 }
